@@ -8,6 +8,7 @@
     <div class="container">
       <%= yield %>
       <%= render 'layouts/footbar' %>
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
