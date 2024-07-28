@@ -11,6 +11,8 @@ class SessionsController < ApplicationController
       log_in @user
       redirect_to forwarding_url|| @user
     else
+      message = "Account not activated."
+      message += "Check your email for the activation link."
       flash.now[:danger] = 'Invalid data'
       render 'new', status: :unprocessable_entity
     end
